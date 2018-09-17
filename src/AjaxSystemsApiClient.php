@@ -83,6 +83,17 @@ class AjaxSystemsApiClient
     }
 
     /**
+     * Require getCsaConnection to be called before usage
+     *
+     * @return array
+     */
+    public function getRawHubsData(): array
+    {
+        $response = $this->call('SecurConfig/api/dashboard/getHubsData');
+        return $this->decodeResponse($response, 'data');
+    }
+
+    /**
      * @return bool
      */
     public function getCsaConnection()

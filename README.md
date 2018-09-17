@@ -15,6 +15,12 @@ API client for [ajax.systems](https://ajax.systems/) security system
   - Arm/disarm your Hub with CRON
 - [x] [Send panic](examples/panic)
   - Send panic to Hub on some external event
+- [x] [Get Hub's raw data](examples/hubs)
+  - Get battery charge of all sensors daily and send notification to user's email with CRON 
+  - Get temperature of some room's sensor to turn on room's heater
+  - Get power consumption of WallSwitch connected device to store statistics
+  - Self-test script to check important sensors settings and send notification to user's 
+    email if some important settings was changed since last time 
 - [x] [Read raw log](examples/logs)
   - Track HUB events for home automation
   - Backup events to external source
