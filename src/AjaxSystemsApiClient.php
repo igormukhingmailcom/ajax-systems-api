@@ -95,6 +95,19 @@ class AjaxSystemsApiClient
     }
 
     /**
+     * @param string $hexHubId Hex representations of Hub ID, e.g. 00001234
+     * @return bool
+     */
+    public function sendPanic($hexHubId)
+    {
+        $response = $this->call('SecurConfig/api/dashboard/sendPanic', [
+            'hubID' => $hexHubId
+        ]);
+        $json = $this->decodeResponse($response);
+        return $json[$hexHubId];
+    }
+
+    /**
      * @param ResponseInterface $response
      * @throws \Exception
      */

@@ -45,3 +45,8 @@ nano examples/credentials.php
 cd examples/arm
 php index.php
 ```
+
+## Cases current library covers
+
+- [x] Arm/disarm/partially arm (night mode)
+- [x] Send panic
