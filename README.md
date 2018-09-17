@@ -78,3 +78,7 @@ php index.php
 
 - [ ] Turn on/off Ajax Relay if this supported by app.ajax.systems (haven't this device to play with)
 - [ ] Turn on/off Ajax Socket if this supported by app.ajax.systems (haven't this device to play with)
+- [ ] Convert RAW data to objects
+- [ ] Save objects
+- [ ] SSE (server-sent events)
+- [ ] Symfony bundle
