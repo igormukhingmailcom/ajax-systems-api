@@ -52,3 +52,6 @@ php index.php
   - Arm/disarm your Hub with CRON
 - [x] Send panic
   - Send panic to Hub on some external event
+- [x] Read raw log
+  - Track HUB events for home automation
+  - Backup events to external source

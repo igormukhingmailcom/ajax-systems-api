@@ -108,6 +108,25 @@ class AjaxSystemsApiClient
     }
 
     /**
+     * Returns RAW logs data
+     *
+     * @param string $hexHubId Hex representations of Hub ID, e.g. 00001234
+     * @param int $count Max count of log items to return
+     * @param int $offset Offset
+     * @return array
+     */
+    public function getRawLogs(string $hexHubId, int $count = 10, int $offset = 0)
+    {
+        $response = $this->call('SecurConfig/api/dashboard/getLogs', [
+            'hubId'=>$hexHubId,
+            'count'=>$count,
+            'offset'=>$offset,
+        ]);
+        $json = $this->decodeResponse($response, 'data');
+        return $json;
+    }
+
+    /**
      * @param ResponseInterface $response
      * @throws \Exception
      */
