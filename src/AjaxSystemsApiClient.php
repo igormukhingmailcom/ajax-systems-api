@@ -161,19 +161,19 @@ class AjaxSystemsApiClient
         if (!$json['requestResult']) {
             throw new \Exception(sprintf(
                 'Error in user response: %s',
-                $json['message'] ?: $content
+                isset($json['message']) && $json['message'] ?: $content
             ));
         }
 
         if ($jsonDataKey) {
-            if (is_array($json[$jsonDataKey])) {
-                $json = $json[$jsonDataKey];
-            } else {
-                $json = json_decode($json[$jsonDataKey], true);
-                if (json_last_error() !== JSON_ERROR_NONE) {
-                    return $json[$jsonDataKey];
+            if (!is_array($json[$jsonDataKey])) {
+                $subJson = json_decode($json[$jsonDataKey], true);
+                if (json_last_error() === JSON_ERROR_NONE) {
+                    return $subJson;
                 }
             }
+
+            $json = $json[$jsonDataKey];
         }
 
         return $json;
