@@ -103,6 +103,8 @@ class AjaxSystemsApiClient
     }
 
     /**
+     * Require getCsaConnection to be called before usage
+     *
      * @param integer $action self::ARM_STATE_*
      * @param string $hexHubId Hex representations of Hub ID, e.g. 00001234
      * @return bool
@@ -118,6 +120,8 @@ class AjaxSystemsApiClient
     }
 
     /**
+     * Require getCsaConnection to be called before usage
+     *
      * @param string $hexHubId Hex representations of Hub ID, e.g. 00001234
      * @return bool
      */
@@ -130,6 +134,8 @@ class AjaxSystemsApiClient
     }
 
     /**
+     * Require getCsaConnection to be called before usage
+     *
      * @param string $hexHubId Hex representations of Hub ID, e.g. 00001234
      * @return string
      */
@@ -144,6 +150,8 @@ class AjaxSystemsApiClient
 
     /**
      * Returns RAW logs data
+     *
+     * Require getCsaConnection to be called before usage
      *
      * @param string $hexHubId Hex representations of Hub ID, e.g. 00001234
      * @param int $count Max count of log items to return
@@ -162,6 +170,8 @@ class AjaxSystemsApiClient
 
     /**
      * Turn on/off Wall Switch
+     *
+     * Require getCsaConnection to be called before usage
      *
      * @param int $command One of self::COMMAND_SWITCH_STATE_*
      * @param string $hexDeviceId Hex representations of Wall Switch Device ID, e.g. 00001234
