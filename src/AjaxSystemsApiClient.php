@@ -55,7 +55,7 @@ class AjaxSystemsApiClient
      * @param string $login
      * @param string $password
      */
-    public function login($login, $password)
+    public function login(string $login, string $password)
     {
         $response = $this->call('api/account/do_login', [
             'j_username'=>$login,
@@ -84,7 +84,7 @@ class AjaxSystemsApiClient
      * @param string $hexHubId Hex representations of Hub ID, e.g. 00001234
      * @return bool
      */
-    public function setArm($action, $hexHubId)
+    public function setArm(int $action, string $hexHubId)
     {
         $response = $this->call('SecurConfig/api/dashboard/setArm', [
             'hubID'  => $hexHubId,
@@ -98,7 +98,7 @@ class AjaxSystemsApiClient
      * @param string $hexHubId Hex representations of Hub ID, e.g. 00001234
      * @return bool
      */
-    public function sendPanic($hexHubId)
+    public function sendPanic(string $hexHubId)
     {
         $response = $this->call('SecurConfig/api/dashboard/sendPanic', [
             'hubID' => $hexHubId
@@ -147,9 +147,13 @@ class AjaxSystemsApiClient
         }
 
         if ($jsonDataKey) {
-            $json = json_decode($json[$jsonDataKey], true);
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                return $json[$jsonDataKey];
+            if (is_array($json[$jsonDataKey])) {
+                $json = $json[$jsonDataKey];
+            } else {
+                $json = json_decode($json[$jsonDataKey], true);
+                if (json_last_error() !== JSON_ERROR_NONE) {
+                    return $json[$jsonDataKey];
+                }
             }
         }
 
