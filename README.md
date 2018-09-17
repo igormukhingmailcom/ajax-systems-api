@@ -2,6 +2,8 @@
 
 API client for [ajax.systems](https://ajax.systems/) security system
 
+**Warning** Library in unstable state now and will be changed during development
+
 ## Installation
 
 ```bash
