@@ -22,6 +22,7 @@ API client for [ajax.systems](https://ajax.systems/) security system
   - Track and warn user if balance is low
   - Track and automatically add money to balance (pay via some service) 
     if balance is low
+- [x] [Get logged in user data](examples/user)
 
 ## Installation
 

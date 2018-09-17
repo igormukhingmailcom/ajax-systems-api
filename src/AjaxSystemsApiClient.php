@@ -74,6 +74,15 @@ class AjaxSystemsApiClient
     }
 
     /**
+     * @return array
+     */
+    public function getRawUserData(): array
+    {
+        $response = $this->call('SecurConfig/api/account/getUserData');
+        return $this->decodeResponse($response, 'data');
+    }
+
+    /**
      * @return bool
      */
     public function getCsaConnection()
