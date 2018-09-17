@@ -4,6 +4,20 @@ API client for [ajax.systems](https://ajax.systems/) security system
 
 **Warning** Library in unstable state now and will be changed during development
 
+## Cases current library covers
+
+- [x] Arm/disarm/partially arm (night mode)
+  - Arm/disarm your Hub with CRON
+- [x] Send panic
+  - Send panic to Hub on some external event
+- [x] Read raw log
+  - Track HUB events for home automation
+  - Backup events to external source
+- [x] Get Hub's SIM card balance
+  - Track and warn user if balance is low
+  - Track and automatically add money to balance (pay via some service) 
+    if balance is low
+
 ## Installation
 
 ```bash
@@ -47,17 +61,3 @@ nano examples/credentials.php
 cd examples/arm
 php index.php
 ```
-
-## Cases current library covers
-
-- [x] Arm/disarm/partially arm (night mode)
-  - Arm/disarm your Hub with CRON
-- [x] Send panic
-  - Send panic to Hub on some external event
-- [x] Read raw log
-  - Track HUB events for home automation
-  - Backup events to external source
-- [x] Get Hub's SIM card balance
-  - Track and warn user if balance is low
-  - Track and automatically add money to balance (pay via some service) 
-    if balance is low
