@@ -49,4 +49,6 @@ php index.php
 ## Cases current library covers
 
 - [x] Arm/disarm/partially arm (night mode)
+  - Arm/disarm your Hub with CRON
 - [x] Send panic
+  - Send panic to Hub on some external event
