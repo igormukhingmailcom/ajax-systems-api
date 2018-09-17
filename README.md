@@ -6,14 +6,16 @@ API client for [ajax.systems](https://ajax.systems/) security system
 
 ## Cases current library covers
 
-- [x] Arm/disarm/partially arm (night mode)
+(Sublists contain cases when library potentially can be used) 
+
+- [x] [Arm/disarm/partially arm (night mode)](examples/arm)
   - Arm/disarm your Hub with CRON
-- [x] Send panic
+- [x] [Send panic](examples/panic)
   - Send panic to Hub on some external event
-- [x] Read raw log
+- [x] [Read raw log](examples/logs)
   - Track HUB events for home automation
   - Backup events to external source
-- [x] Get Hub's SIM card balance
+- [x] [Get Hub's SIM card balance](examples/balance)
   - Track and warn user if balance is low
   - Track and automatically add money to balance (pay via some service) 
     if balance is low
