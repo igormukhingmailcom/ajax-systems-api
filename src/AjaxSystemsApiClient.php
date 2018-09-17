@@ -103,12 +103,11 @@ class AjaxSystemsApiClient
         $response = $this->call('SecurConfig/api/dashboard/sendPanic', [
             'hubID' => $hexHubId
         ]);
-        $json = $this->decodeResponse($response);
-        return $json[$hexHubId];
+        return $this->decodeResponse($response, $hexHubId);
     }
 
     /**
-     * @param string $hexHubId
+     * @param string $hexHubId Hex representations of Hub ID, e.g. 00001234
      * @return string
      */
     public function getHubBalance(string $hexHubId): string
@@ -135,8 +134,7 @@ class AjaxSystemsApiClient
             'count'=>$count,
             'offset'=>$offset,
         ]);
-        $json = $this->decodeResponse($response, 'data');
-        return $json;
+        return $this->decodeResponse($response, 'data');
     }
 
     /**
@@ -197,16 +195,11 @@ class AjaxSystemsApiClient
      * @param array $formData
      * @param string $method
      * @return ResponseInterface
-     * @throws \Http\Client\Exception
      */
     protected function call(string $relativeUrl, array $formData = [], string $method = 'POST')
     {
         $headers = [];
         $formData && $headers += ['Content-Type'=>'application/x-www-form-urlencoded;charset=UTF-8'];
-        $formData || $headers += ['Accept'=>'application/json, text/plain, */*'];
-        $formData || $headers += ['Host'=>'app.ajax.systems'];
-        $formData || $headers += ['Origin'=>'https://app.ajax.systems'];
-        $formData || $headers += ['Referer'=>'https://app.ajax.systems/dashboard/'];
 
         $request = $this->messageFactory->createRequest(
             $method,
@@ -232,7 +225,7 @@ class AjaxSystemsApiClient
             return $formData;
         }
 
-        array_walk($formData, function (&$value,&$key) {
+        array_walk($formData, function (&$value, &$key) {
             if ($value === true) {
                 $value = 'true';
             }
@@ -248,7 +241,7 @@ class AjaxSystemsApiClient
      * @param string $relatedUrl
      * @return string
      */
-    protected function getAbsoluteUrl(string $relativeUrl)
+    protected function getAbsoluteUrl(string $relativeUrl): string
     {
         return sprintf(
             '%s/%s',
