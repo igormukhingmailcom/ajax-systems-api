@@ -8,6 +8,9 @@ API client for [ajax.systems](https://ajax.systems/) security system
 
 (Sublists contain cases when library potentially can be used) 
 
+- [x] [Turn on/off WallSwitches](examples/wallswitch)
+  - Turn on/off lights/boiler/irrigation connected to WallSwitch with CRON
+  - Ignite a TNT connected to WallSwitch on some external event
 - [x] [Arm/disarm/partially arm (night mode)](examples/arm)
   - Arm/disarm your Hub with CRON
 - [x] [Send panic](examples/panic)
@@ -63,3 +66,8 @@ nano examples/credentials.php
 cd examples/arm
 php index.php
 ```
+
+# TODO
+
+- [ ] Turn on/off Ajax Relay if this supported by app.ajax.systems (haven't this device to play with)
+- [ ] Turn on/off Ajax Socket if this supported by app.ajax.systems (haven't this device to play with)

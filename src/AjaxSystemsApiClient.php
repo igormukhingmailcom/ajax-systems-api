@@ -20,6 +20,9 @@ class AjaxSystemsApiClient
     const ARM_STATE_ARMED     = 1;
     const ARM_STATE_PARTIAL   = 2;
 
+    const COMMAND_SWITCH_STATE_ON   = 6;
+    const COMMAND_SWITCH_STATE_OFF  = 7;
+
     /**
      * @var MessageFactory
      */
@@ -135,6 +138,24 @@ class AjaxSystemsApiClient
             'offset'=>$offset,
         ]);
         return $this->decodeResponse($response, 'data');
+    }
+
+    /**
+     * Turn on/off Wall Switch
+     *
+     * @param int $command One of self::COMMAND_SWITCH_STATE_*
+     * @param string $hexDeviceId Hex representations of Wall Switch Device ID, e.g. 00001234
+     * @param string $hexHubId Hex representations of Hub ID, e.g. 00001234
+     */
+    public function setSwitchState(int $command, string $hexDeviceId, string $hexHubId)
+    {
+        $response = $this->call('SecurConfig/api/dashboard/sendCommand', [
+            'hubID'=>$hexHubId,
+            'objectType'=>31,
+            'deviceID'=>$hexDeviceId,
+            'command'=>$command
+        ]);
+        $this->validateResponse($response);
     }
 
     /**
