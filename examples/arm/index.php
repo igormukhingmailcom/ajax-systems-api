@@ -13,11 +13,13 @@ try {
 
     $ajaxSystemsClient->getCsaConnection();
 
-    $ajaxSystemsClient->setArm(AjaxSystemsApiClient::ARM_STATE_PARTIAL, AJAX_DEFAULT_HUB_ID);
-    echo "Partial armed\n";
+    if ($ajaxSystemsClient->setArm(AjaxSystemsApiClient::ARM_STATE_PARTIAL, AJAX_DEFAULT_HUB_ID)) {
+        echo "Partially armed\n";
+    }
 
-    $ajaxSystemsClient->setArm(AjaxSystemsApiClient::ARM_STATE_DISARMED, AJAX_DEFAULT_HUB_ID);
-    echo "Disarmed\n";
+    if ($ajaxSystemsClient->setArm(AjaxSystemsApiClient::ARM_STATE_DISARMED, AJAX_DEFAULT_HUB_ID)) {
+        echo "Disarmed\n";
+    }
 
 } catch (Exception $e) {
     echo $e->getMessage();
