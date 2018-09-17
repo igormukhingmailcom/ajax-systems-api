@@ -1,0 +1,36 @@
+{
+  "name": "igormukhingmailcom/ajax-systems-api",
+  "type": "library",
+  "description": "Library to work with ajax.systems API",
+  "keywords": [
+    "ajax.systems",
+    "app.ajax.systems",
+    "api",
+    "client",
+    "sdk"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Igor Mukhin",
+      "email": "igor.mukhin@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "php-http/message": "^1.0",
+    "php-http/httplug": "^1.0",
+    "php-http/discovery": "^1.0",
+    "php-http/client-implementation": "^1.0",
+    "php-http/client-common": "^1.0"
+  },
+  "require-dev": {
+    "php-http/guzzle6-adapter": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mukhin\\AjaxSystemsApi\\": "src/",
+      "Tests\\Mukhin\\AjaxSystemsApi\\": "tests/"
+    }
+  }
+}
