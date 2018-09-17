@@ -108,6 +108,19 @@ class AjaxSystemsApiClient
     }
 
     /**
+     * @param string $hexHubId
+     * @return string
+     */
+    public function getHubBalance(string $hexHubId): string
+    {
+        $response = $this->call(sprintf(
+            'SecurConfig/api/dashboard/getHubBalance?hubID=%s',
+            $hexHubId
+        ));
+        return $this->decodeResponse($response, 'data');
+    }
+
+    /**
      * Returns RAW logs data
      *
      * @param string $hexHubId Hex representations of Hub ID, e.g. 00001234

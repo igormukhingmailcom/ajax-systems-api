@@ -34,7 +34,7 @@ try {
 
 # Contribution
 
-## Testing / running example
+## Testing / running examples
 
 ```bash
 composer install
@@ -57,3 +57,7 @@ php index.php
 - [x] Read raw log
   - Track HUB events for home automation
   - Backup events to external source
+- [x] Get Hub's SIM card balance
+  - Track and warn user if balance is low
+  - Track and automatically add money to balance (pay via some service) 
+    if balance is low
