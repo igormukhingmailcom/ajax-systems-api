@@ -1,5 +1,9 @@
 # AjaxSystemsApi
 
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE)
+[![Quality Score][ico-code-quality]][link-code-quality]
+
 API client for [ajax.systems](https://ajax.systems/) security system
 
 **Warning** Library in unstable state now and will be changed during development
@@ -82,3 +86,11 @@ php index.php
 - [ ] Save objects
 - [ ] SSE (server-sent events)
 - [ ] Symfony bundle
+
+
+[ico-version]: https://img.shields.io/packagist/v/igormukhingmailcom/ajax-systems-api.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/igormukhingmailcom/ajax-systems-api.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/igormukhingmailcom/ajax-systems-api
+[link-code-quality]: https://scrutinizer-ci.com/g/igormukhingmailcom/ajax-systems-apiAJAX_DEFAULT_HUB_ID
