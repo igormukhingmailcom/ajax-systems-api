@@ -6,7 +6,14 @@
 
 API client for [ajax.systems](https://ajax.systems/) security system
 
-**Warning** Library in unstable state now and will be changed during development
+**Warning** 
+This library is based on grey/reverse engineered Ajax Systems **Web API** which was closed at 2018.
+So currently this library doesn't work.
+
+**Future upgrade**
+New non-public **Ajax Systems Enterprise API** is under development right now.
+Please, star this project if you interested to be announced once 
+**Enterprise API** become public and available to all clients.
 
 ## Cases current library covers
 
